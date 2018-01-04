@@ -1,1 +1,3 @@
-# imaginet-wp-theme
+# wp-hila-blank-theme
+
+### Wordpress starter theme
