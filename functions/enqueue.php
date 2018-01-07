@@ -7,7 +7,7 @@ function enqueue_styles(){
     }
 
     if(ENV == 'dev'){
-        wp_register_style('assets', THEME . '/css/assets.min.css', array(), NULL, 'all'); wp_enqueue_style('assets');
+        wp_register_style('assets', THEME . '/css/all_assets.min.css', array(), NULL, 'all'); wp_enqueue_style('assets');
         wp_register_style('style', THEME . '/css/style.css', array(), NULL, 'all'); wp_enqueue_style('style');
         wp_register_style('responsive', THEME . '/css/responsive.css', array(), NULL, 'all'); wp_enqueue_style('responsive');
         wp_register_style('rtl', THEME . '/css/rtl-style.css', array(), NULL, 'all'); wp_enqueue_style('rtl');
@@ -29,9 +29,6 @@ function enqueue_scripts() {
     else{
         wp_register_script( 'production', THEME . '/js/production.min.js', array( 'jquery' ), NULL, true ); wp_enqueue_script( 'production' );
     }
-
-    // wp_register_script( 'tether', THEME . '/assets/bootstrap/tether.min.js', array( 'jquery' ), NULL, true ); wp_enqueue_script( 'tether' ); // must be before bootstrap
-	// wp_register_script( 'bootstrap-js', THEME . '/assets/bootstrap/bootstrap.min.js', array( 'jquery' ), NULL, true ); wp_enqueue_script( 'bootstrap-js' );
 
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
