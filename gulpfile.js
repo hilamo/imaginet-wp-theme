@@ -1,5 +1,5 @@
 // Run this command first:
-// npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify
+// npm install gulp gulp-sass gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify
 
 var gulp         = require('gulp'),
     sass         = require('gulp-sass'),
@@ -14,8 +14,9 @@ var gulp         = require('gulp'),
 /*******************************
     Define bootstrap Framework
 *******************************/
-var framework_js = './assets/bootstrap/js/bootstrap.min.js';
-var framework_css = './assets/bootstrap/css/bootstrap.min.css';
+var tether        = './assets/bootstrap/tether.min.js';
+var bootstrap_js  = './assets/bootstrap/bootstrap.min.js';
+var bootstrap_css = './assets/bootstrap/bootstrap.min.css';
 
 gulp.task('default', function(){
     console.log("Gulp default started");
@@ -24,7 +25,8 @@ gulp.task('default', function(){
 Development
 **************/
 var src_scripts = [
-    framework_js,
+    tether,
+    bootstrap_js,
     './assets/js/jquery.magnific-popup.min.js',
     './assets/js/slick.min.js',
     './assets/js/wow.min.js'
@@ -41,7 +43,7 @@ gulp.task('js', function(){
 });
 
 var src_styles = [
-    framework_css,
+    bootstrap_css,
     './assets/css/assets.min.css',
     './assets/css/animate.css',
     './assets/css/magnific-popup.css',
@@ -50,9 +52,9 @@ var src_styles = [
 
 gulp.task('css',['js'], function(){
     return gulp.src(src_styles)
-    .pipe(concat('assets.css'))
+    .pipe(concat('all_assets.css'))
     .pipe(gulp.dest('./css/'))
-    .pipe(rename('assets.min.css'))
+    .pipe(rename('all_assets.min.css'))
     .pipe(cleanCSS())
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
@@ -63,7 +65,7 @@ gulp.task('css',['js'], function(){
 });
 
 gulp.task('sass', ['css'], function() {
-    gulp.src('./css/*style.scss') // the src of the file we want to manipulate
+    gulp.src('./css/style.scss') // the src of the file we want to manipulate
         .pipe(sass()) // in the pipe the file is going to be transformed
         // .pipe(cleanCSS())
         .pipe(autoprefixer({
@@ -74,12 +76,13 @@ gulp.task('sass', ['css'], function() {
         .pipe(notify("SASS files were manipulated."));
 });
 
-gulp.task('watch', ['sass'], function() {
-    gulp.watch('./css/**/*.scss');
+
+gulp.task('development', ['sass'], function(){
+    console.log("Development scripts & styles compiled!!!");
 });
 
-gulp.task('development', ['watch'], function(){
-    console.log("Development scripts & styles compiled!!!");
+gulp.task('watch', ['development'], function() {
+    gulp.watch('./css/*.scss');
 });
 
 /*********************
