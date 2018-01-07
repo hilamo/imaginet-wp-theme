@@ -1,8 +1,4 @@
-/*!
-    Responsive style
- **/
-/** Mobile Menu Button *****************/
-#mobile-menu_button {
+.mobile_menu_button {
   position: relative;
   display: none;
 }
@@ -120,11 +116,11 @@ body.admin-bar .off-canvas {
 }
 
 /** Mobile Menu Style **************/
-#mobile-menu_holder {
+.mobile_menu_holder {
   position: relative;
 }
 
-#mobile-menu_title {
+.mobile_menu_title {
   position: relative;
   display: block;
   text-align: center;
@@ -193,6 +189,18 @@ ul.mobile_menu > li a:hover {
 /****************************************************************************************************************/
 /* end of (max-width: 1024px) */
 /****************************************************************************************************************/
+@media only screen and (max-width: 768px) {
+  .mobile_menu_button {
+    display: block;
+  }
+  .wrap_main_menu {
+    display: none;
+  }
+  body.admin-bar .off-canvas {
+    top: 46px;
+  }
+}
+
 /* end of (max-width: 768px) */
 /****************************************************************************************************************/
 /* end of (max-width: 640px) */

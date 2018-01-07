@@ -1,9 +1,6 @@
-/** Mobile Menu Button *****************/
+@import 'vars';
+
 .mobile_menu_button {
-    position: relative;
-    display: none;
-}
-#mobile-menu_button {
     position: relative;
     display: none;
 }
@@ -31,7 +28,7 @@
     position: absolute;
     height: 5px;
     width: 100%;
-    background: #3497ef;
+    background: $primary-color;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -106,7 +103,7 @@ body.admin-bar .off-canvas {
     top: 32px;
 }
 /** Mobile Menu Style **************/
-#mobile-menu_holder {
+.mobile_menu_holder {
     position: relative;
 }
 .mobile_menu_title {
@@ -115,8 +112,8 @@ body.admin-bar .off-canvas {
     text-align: center;
     font-size: 1.5rem;
     padding: 10px 0;
-    background: #3497ef;
-    border-bottom: 1px solid #3497ef;
+    background: $primary-color;
+    border-bottom: 1px solid $primary-color;
     font-weight: 500;
     color: #fff;
 }
@@ -130,7 +127,7 @@ ul#mobile-menu li{
     display: block;
 }
 ul#mobile-menu > li{
-    border-bottom: 1px solid #3497ef;
+    border-bottom: 1px solid $primary-color;
 }
 ul#mobile-menu li a{
     position: relative;
@@ -139,7 +136,7 @@ ul#mobile-menu li a{
     font-size: 0.9rem;
     text-decoration: none;
     padding: 10px 15px;
-    color: #363636;
+    color: $text-color;
 }
 ul#mobile-menu ul.sub-menu{
     position: relative;
@@ -162,6 +159,6 @@ ul#mobile-menu > li > a:focus,
 ul#mobile-menu > li.current-menu-item > a,
 ul#mobile-menu ul.sub-menu li.current-menu-item a,
     ul.mobile_menu > li a:hover{
-    color: #3497ef;
+    color: $primary-color;
 }
 /****************************************************************************************************************/

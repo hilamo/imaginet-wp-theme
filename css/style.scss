@@ -1,24 +1,25 @@
-/*! Theme Main Style
-    Put all your custom css here...
-*/
+// Theme Main Style
+// Put all your custom css here...
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+@import 'vars';
+
 /* Defaults
 -------------------------------------------------------------- */
 html {
   font-size: 16px;
 }
 body {
-  color: #363636;
+  color: $text-color;
   font-size: 1rem;
   direction: ltr;
   line-height: 1rem;
   font-weight: 400;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $main-font-family;
 }
 h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $main-font-family;
   font-weight: 300;
   line-height: 1.3em;
 }
@@ -36,7 +37,7 @@ h4 {
 }
 
 div, p, span, a, input, input[type="submit"], select, textarea {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $main-font-family;
 }
 
 strong, b{ font-weight: bold;}
@@ -51,11 +52,11 @@ a, input[type="submit"], button, .transition {
 }
 a{
     text-decoration: none;
-    color: #3497ef;
+    color: $primary-color;
 }
 a:hover,
 a:focus{
-    color: #3497ef;
+    color: $primary-color;
     text-decoration: underline;
 }
 img{
@@ -105,6 +106,12 @@ img.grayscale:hover{
     position: relative;
     display: block;
 }
+.flex_container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 /** Main Menu */
 ul#main-menu{
     position: relative;
@@ -118,17 +125,17 @@ ul#main-menu > li > a{
     position: relative;
     display: block;
     font-size: 1rem;
-    color: #3497ef;
+    color: $primary-color;
     line-height: 1.667rem;
     padding: 5px 10px;
 }
 ul#main-menu > li.current-menu-item > a{
-    color: #363636;
+    color: $text-color;
 }
 ul#main-menu > li > a:focus,
 ul#main-menu > li > a:hover{
     text-decoration: none;
-    color: #363636;
+    color: $text-color;
 }
 ul#main-menu > li > a:after{
     content: '|';
@@ -157,9 +164,9 @@ ul#main-menu ul.sub-menu li a{
     align-items: center; -webkit-align-items: center; -ms-flex-align: center;
     justify-content: space-between; -webkit-justify-content: space-between; -ms-flex-pack: space-between;
     padding: 10px;
-    color: #3497ef;
-    border-right: 1px solid #3497ef;
-    border-left: 1px solid #3497ef;
+    color: $primary-color;
+    border-right: 1px solid $primary-color;
+    border-left: 1px solid $primary-color;
     border-bottom: 1px solid #A1A1A1;
     margin-right: 2px;
     margin-left: 2px;
@@ -167,9 +174,9 @@ ul#main-menu ul.sub-menu li a{
 ul#main-menu ul.sub-menu li a:hover,
 ul#main-menu ul.sub-menu li a:focus{
     text-decoration: none;
-    color: #363636;
+    color: $text-color;
 }
 ul#main-menu ul.sub-menu li:hover > a{
-    color: #363636;
+    color: $text-color;
 }
 /************/
