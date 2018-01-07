@@ -19,7 +19,7 @@ npm install gulp gulp-sass gulp-uglify gulp-rename gulp-clean-css gulp-autoprefi
 
 4. Run `gulp watch`
 
-## watching Files
+## Watching Files
 Track the changes of your styles and scripts by setting default wachers in the theme:
 ```
 "/public_html/wp-content/themes/imaginet-wp-theme/css/*.css",
