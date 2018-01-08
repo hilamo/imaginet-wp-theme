@@ -6,8 +6,8 @@ function first_shortcode_handler($atts){
                             'title' => 'Default Title'
                             ), $atts)
     );
-    ob_start();
 
+    ob_start();
 
     return ob_get_clean();
 }
