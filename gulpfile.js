@@ -104,7 +104,7 @@ gulp.task('production-js', function() {
 });
 
 var production_styles = [
-    './css/assets.min.css',
+    './css/all_assets.min.css',
     './css/style.min.css',
     './css/responsive.min.css',
     './css/rtl-style.css'
