@@ -2,8 +2,12 @@
 This is a Wordpress blank starter theme that works with gulp.
 ## Installation
 ### Required
-* Install [node.js](https://nodejs.org/en/).
+* Install last stable version of [node.js](https://nodejs.org/en/).
 * Install [npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm).
+  * open node.js command prompt (Run as administration) - it will open "c:\Windows\System32>"
+    and Run the command: 
+      * on windows - `npm install npm -g` 
+      * on Mac - `sudo npm install npm -g`
 * Install [Gulp](http://gulpjs.com/) globally in your system. 
 Assuming Node.js is installed, open the command line tool, and run the command: `npm install -g gulp`.
 
