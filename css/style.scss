@@ -6,38 +6,38 @@
 /* Defaults
 -------------------------------------------------------------- */
 html {
-  font-size: 16px;
+    font-size: 16px;
 }
 body {
-  color: $text-color;
-  font-size: 1rem;
-  direction: ltr;
-  line-height: 1rem;
-  font-weight: 400;
-  font-family: $main-font-family;
+    color: $text-color;
+    font-size: 1rem;
+    direction: ltr;
+    line-height: 1rem;
+    font-weight: 400;
+    font-family: $main-font-family;
 }
 h1, h2, h3, h4, h5, h6 {
-  position: relative;
-  display: block;
-  font-family: $main-font-family;
-  font-weight: 300;
-  line-height: 1.3em;
+    position: relative;
+    display: block;
+    font-family: $main-font-family;
+    font-weight: 300;
+    line-height: 1.5em;
 }
 h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 h2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 h3 {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
 }
 h4 {
   font-size: 1rem;
 }
 
 div, p, span, a, input, input[type="submit"], select, textarea {
-  font-family: $main-font-family;
+    font-family: $main-font-family;
 }
 
 strong, b{ font-weight: bold;}
@@ -91,7 +91,11 @@ img.grayscale:hover{
 .content ol{
     list-style: decimal;
 }
-
+.content p{
+    font-size: 1rem;
+    line-height: 1.2em;
+    margin-bottom: .6rem;
+}
 /****************************************************************
     LAYOUT  LAYOUT  LAYOUT  LAYOUT  LAYOUT  LAYOUT  LAYOUT  LAYOUT
 ****************************************************************/
