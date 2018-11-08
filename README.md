@@ -19,9 +19,7 @@ Assuming Node.js is installed, open the command line tool, and run the command: 
 npm install gulp gulp-sass gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify
 ```
 
-3. Run `gulp development`
-
-4. Run `gulp watch`
+3. Run `gulp watch`
 
 ## Watching Files
 Track the changes of your styles and scripts by setting default wachers in the theme:
