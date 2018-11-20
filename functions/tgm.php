@@ -53,7 +53,7 @@ add_action( 'tgmpa_register', 'imaginet_register_required_plugins' );
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
 function imaginet_register_required_plugins() {
-	
+
 	$plugins = array(
 
         array(
@@ -71,6 +71,26 @@ function imaginet_register_required_plugins() {
 		array(
 			'name'	   => 'Contact Form 7',
 			'slug'	   => 'contact-form-7',
+			'required' => true,
+		),
+		array(
+			'name'	   => 'NinjaScanner',
+			'slug'	   => 'ninjascanner',
+			'required' => true,
+		),
+		array(
+			'name'	   => 'Intuitive Custom Post Order',
+			'slug'	   => 'ninjafirewall',
+			'required' => false,
+		),
+		array(
+			'name'	   => 'EWWW Image Optimizer',
+			'slug'	   => 'ewww-image-optimizer',
+			'required' => true,
+		),
+		array(
+			'name'	   => 'Enhanced Media Library',
+			'slug'	   => 'enhanced-media-library',
 			'required' => true,
 		),
 		array(
