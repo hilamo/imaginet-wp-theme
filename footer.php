@@ -1,6 +1,8 @@
 					<!-- footer -->
 					<footer class="footer" role="contentinfo">
-
+						<div class="container">
+							<div class="credit">Site by <a href="http://imaginet.co.il" target="_blank">Imaginet</a></div>
+						</div>
 					</footer>
 					<!-- /footer -->
 
