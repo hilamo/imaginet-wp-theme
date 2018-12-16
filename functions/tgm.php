@@ -79,7 +79,7 @@ function imaginet_register_required_plugins() {
 			'required' => true,
 		),
 		array(
-			'name'	   => 'Intuitive Custom Post Order',
+			'name'	   => 'NinjaFirewall',
 			'slug'	   => 'ninjafirewall',
 			'required' => false,
 		),

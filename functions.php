@@ -202,3 +202,18 @@ function print_responsive_image_attr($image_id, $image_size, $max_width){
 
 	}
 }
+
+/**
+* Allow Editor users premission to use the Flamingo plugin
+*/
+add_filter( 'flamingo_map_meta_cap', 'add_editor_premission_flamingo_map_meta_cap' );
+function add_editor_premission_flamingo_map_meta_cap( $meta_caps ) {
+	$meta_caps = array_merge( $meta_caps, array(
+		'flamingo_edit_contacts' => 'edit_pages',
+		'flamingo_edit_inbound_messages' => 'edit_pages',
+	) );
+
+	return $meta_caps;
+}
+
+
