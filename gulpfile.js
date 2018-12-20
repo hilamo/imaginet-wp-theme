@@ -29,6 +29,7 @@ var src_scripts = [
     bootstrap_js,
     './assets/js/jquery.magnific-popup.min.js',
     './assets/js/slick.min.js',
+    './assets/js/jquery.lazy.min.js',
     './assets/js/wow.min.js'
 ];
 

@@ -32,7 +32,8 @@ if (function_exists('add_theme_support')){
     add_theme_support('menus');
 	// Add custom logo
     add_theme_support( 'custom-logo' );
-
+    // Add title tag in wp_head
+    add_theme_support( 'title-tag' );
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
     // override media setting - Image sizes
@@ -190,17 +191,66 @@ function hebrew_files_prevent($file) {
  * @param string $image_size the size of the thumbnail image or custom image size
  * @param string $max_width the max width this image will be shown to build the sizes attribute
  */
-function print_responsive_image_attr($image_id, $image_size, $max_width){
+function print_responsive_image_attr($image_id, $image_size, $max_width, $lazy = false){
 	// check the image ID is not blank
 	if($image_id != '') {
 		// set the default src image size
 		$image_src = wp_get_attachment_image_url( $image_id, $image_size );
 		// set the srcset with various image sizes
 		$image_srcset = wp_get_attachment_image_srcset( $image_id, $image_size );
-		// generate the markup for the responsive image
-		echo 'src="'.$image_src.'" srcset="'.$image_srcset.'" sizes="(max-width: '.$max_width.') 100vw, '.$max_width.'"';
+        if ($lazy) {
+			$data = 'data-';
+		} else {$data = '';}
+        // generate the markup for the responsive image
+		echo $data.'src="'.$image_src.'" '.$data.'srcset="'.$image_srcset.'" sizes="(max-width: '.$max_width.') 100vw, '.$max_width.'"';
 
 	}
+}
+
+function phpLog($logme) {
+   echo "<script>console.log(".json_encode(var_export($logme, true)).");</script>";
+}
+
+/**
+ * get Youtube ID
+ */
+function getYoutubeId( $video_uri ) {
+    // determine the type of video and the video id
+    preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $video_uri, $matches);
+    //return thumbnail uri
+    return $matches[1];
+}
+/************************************************************/
+/**
+ * Gets a Youtube thumbnail url
+ * @param $id A vimeo id (ie. K4Rh8fyeJAE)
+ * @param $size size of Thumbnail (0,1,2,3,"default","hqdefault","mqdefault","sddefault")
+ * @return thumbnails url
+*/
+function getYoutubeThumbUrl($id , $size="0") {
+    $data = "http://img.youtube.com/vi/".$id."/".$size.".jpg";
+    return $data;
+}
+/************************************************************/
+/**
+ *  get youtube title
+ * @param  [type] $id [description]
+ */
+function getYoutubeTitle($id) {
+    if(empty($id)){
+        return null;
+    }
+	// returns a single line of XML that contains the video title. Not a giant request. Use '@' to suppress errors.
+    $content = @file_get_contents("http://youtube.com/get_video_info?video_id=".$id);
+	if($content){
+        // look for that title tag and get the insides
+        parse_str($content, $ytarr);
+        $videoTitle = $ytarr['title'];
+        return $videoTitle;
+    }
+    else{
+		return __('No title','text_domian');
+    }
 }
 
 /**
@@ -215,5 +265,3 @@ function add_editor_premission_flamingo_map_meta_cap( $meta_caps ) {
 
 	return $meta_caps;
 }
-
-
