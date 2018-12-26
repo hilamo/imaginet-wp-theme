@@ -81,7 +81,7 @@ function imaginet_register_required_plugins() {
 		array(
 			'name'	   => 'NinjaFirewall',
 			'slug'	   => 'ninjafirewall',
-			'required' => false,
+			'required' => true,
 		),
 		array(
 			'name'	   => 'EWWW Image Optimizer',
