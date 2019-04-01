@@ -91,7 +91,7 @@ function imaginet_register_required_plugins() {
 		array(
 			'name'	   => 'Enhanced Media Library',
 			'slug'	   => 'enhanced-media-library',
-			'required' => true,
+			'required' => false,
 		),
 		array(
 			'name'	   => 'Flamingo',
